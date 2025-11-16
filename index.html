@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lonesome No More - AI-powered companionship for your loved ones through personalized phone conversations. Peace of mind for families.">
+    <meta name="keywords" content="AI companion, elderly care, loneliness, phone companion, senior care, family peace of mind">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Lonesome No More - AI Companionship Through Conversation">
+    <meta property="og:description" content="Personalized AI companionship for your loved ones, peace of mind for you.">
+    <meta property="og:type" content="website">
+
+    <title>Lonesome No More - AI Companionship Through Conversation</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Nature-inspired palette optimized for seniors */
+            --primary-color: #5F7A61;        /* Deep sage green - wellness, nature */
+            --secondary-color: #D4735E;      /* Warm terra cotta - warmth, connection */
+            --accent-color: #E8AA6B;         /* Honey amber - optimism, energy */
+            --text-dark: #2C2C2C;            /* Deep charcoal - high contrast */
+            --text-medium: #5A5A5A;          /* Warm gray - readable secondary text */
+            --bg-cream: #FBF8F3;             /* Warm cream - inviting background */
+            --bg-light: #FFFEFB;             /* Soft white with warm tint */
+            --shadow-soft: rgba(92, 122, 97, 0.08);
+            --shadow-medium: rgba(92, 122, 97, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 19px;
+            background: var(--bg-cream);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            text-align: center;
+            padding: 70px 20px 90px;
+            background: var(--bg-light);
+            border-bottom: 1px solid rgba(95, 122, 97, 0.12);
+        }
+
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            letter-spacing: -0.02em;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+        }
+
+        .tagline {
+            font-family: 'Merriweather', serif;
+            font-size: 1.85rem;
+            color: var(--text-dark);
+            font-weight: 400;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .subheading {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            max-width: 720px;
+            margin: 0 auto;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* Main Content Sections */
+        section {
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .intro {
+            background: var(--bg-light);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px var(--shadow-soft);
+            border: 1px solid rgba(95, 122, 97, 0.08);
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            text-align: center;
+            color: var(--text-dark);
+            line-height: 1.85;
+            font-weight: 400;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: transparent;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 980px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+
+        .step-card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 16px var(--shadow-soft);
+            border: 1px solid rgba(95, 122, 97, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px var(--shadow-medium);
+            border-color: rgba(95, 122, 97, 0.2);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 56px;
+            height: 56px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 56px;
+            margin-bottom: 24px;
+        }
+
+        .step-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .step-description {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Demo Section */
+        .demo {
+            background: linear-gradient(135deg, rgba(95, 122, 97, 0.05) 0%, rgba(232, 170, 107, 0.05) 100%);
+            border-top: 1px solid rgba(95, 122, 97, 0.12);
+            border-bottom: 1px solid rgba(95, 122, 97, 0.12);
+        }
+
+        .demo-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .demo-icon {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+        }
+
+        .demo-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .demo-description {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            line-height: 1.75;
+            margin-bottom: 30px;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(232, 170, 107, 0.3);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: var(--bg-light);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px var(--shadow-soft);
+            border: 1px solid rgba(95, 122, 97, 0.08);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 980px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .benefit-icon {
+            font-size: 3.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 24px;
+        }
+
+        .benefit-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .benefit-description {
+            color: var(--text-medium);
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+
+        /* For Families Section */
+        .for-families {
+            background: transparent;
+        }
+
+        .families-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px var(--shadow-soft);
+            border: 1px solid rgba(95, 122, 97, 0.08);
+        }
+
+        .families-list {
+            list-style: none;
+            margin-top: 28px;
+        }
+
+        .families-list li {
+            padding: 16px 0 16px 48px;
+            position: relative;
+            color: var(--text-dark);
+            font-size: 1.12rem;
+            line-height: 1.75;
+        }
+
+        .families-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary-color);
+            color: var(--bg-cream);
+            border-radius: 16px;
+            box-shadow: 0 6px 28px rgba(95, 122, 97, 0.25);
+        }
+
+        .contact .section-title {
+            color: var(--bg-cream);
+        }
+
+        .contact-intro {
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            color: var(--bg-cream);
+            opacity: 0.96;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 35px;
+        }
+
+        .contact-method {
+            text-align: center;
+            flex: 1;
+            min-width: 260px;
+            max-width: 360px;
+        }
+
+        .contact-method i {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            color: var(--accent-color);
+        }
+
+        .contact-method h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.35rem;
+            margin-bottom: 14px;
+            font-weight: 600;
+            color: var(--bg-cream);
+        }
+
+        .contact-method a {
+            color: var(--bg-cream);
+            text-decoration: none;
+            font-size: 1.25rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-method a:hover {
+            border-color: var(--bg-cream);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-medium);
+            font-size: 0.98rem;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        .powered-by {
+            font-size: 0.92rem;
+            opacity: 0.75;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            .logo {
+                font-size: 2.4rem;
+            }
+
+            .tagline {
+                font-size: 1.5rem;
+            }
+
+            .subheading {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .intro-content {
+                font-size: 1.15rem;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .demo-icon {
+                font-size: 3rem;
+            }
+
+            .demo-title {
+                font-size: 2rem;
+            }
+
+            .demo-description {
+                font-size: 1.1rem;
+            }
+
+            .coming-soon-badge {
+                font-size: 1rem;
+                padding: 10px 28px;
+            }
+
+            .families-content {
+                padding: 35px 28px;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="logo">
+                <i class="fas fa-heart"></i>
+                Lonesome No More
+            </h1>
+            <p class="tagline">Companionship for your loved ones, peace of mind for you</p>
+            <p class="subheading">AI-powered conversations that keep your loved ones connected and families informed</p>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="container">
+            <p class="intro-content">
+                Lonesome No More provides personalized AI companionship through simple phone conversations.
+                We learn about your loved one's life story, interests, and preferences to create meaningful
+                conversations that feel genuine and personal. Families stay connected through thoughtful
+                conversation summaries and gentle wellness insights.
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Share Their Story</h3>
+                    <p class="step-description">
+                        Tell us about your loved one's background, interests, favorite topics, and life experiences. We'll use this to create truly personalized conversations.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Meaningful Conversations</h3>
+                    <p class="step-description">
+                        Choose from warm, friendly voices. LNM calls them regularly, remembers everything, asks thoughtful questions, and builds on previous chats.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Stay Connected</h3>
+                    <p class="step-description">
+                        Receive regular conversation summaries, topics discussed, and gentle wellness insights to stay connected to their daily life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo">
+        <div class="container">
+            <div class="demo-content">
+                <div class="demo-icon">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <h2 class="demo-title">Try a Demo Conversation</h2>
+                <p class="demo-description">
+                    Experience firsthand how natural and engaging our AI companion can be. Listen to a sample conversation or try it yourself.
+                </p>
+                <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Lonesome No More?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="benefit-title">Truly Personalized</h3>
+                    <p class="benefit-description">
+                        Choose the perfect voice and personality. We learn their history, interests, and preferences to make every conversation genuinely meaningful and engaging.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="benefit-title">Family Peace of Mind</h3>
+                    <p class="benefit-description">
+                        Stay connected with regular conversation summaries and gentle wellness insights. Know your loved one is never alone, even when you can't be there.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="benefit-title">Effortlessly Simple</h3>
+                    <p class="benefit-description">
+                        Just a phone call - no apps, no computers, no learning curve. Always available, day or night, whenever they need a friendly conversation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Families Section -->
+    <section class="for-families">
+        <div class="container">
+            <h2 class="section-title">For Families & Caregivers</h2>
+            <div class="families-content">
+                <p style="font-size: 1.2rem; color: var(--text-dark); line-height: 1.85; margin-bottom: 20px;">
+                    Lonesome No More helps you stay connected to your loved one's daily life and wellbeing,
+                    even when you can't be there in person.
+                </p>
+                <ul class="families-list">
+                    <li>Easy onboarding process where you share your loved one's interests, history, and preferences</li>
+                    <li>Customize conversation topics, voice selection, and call frequency to match their needs</li>
+                    <li>Receive regular summaries that help you stay connected to their daily life and wellbeing</li>
+                    <li>Gentle wellness observations woven naturally into conversations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Interested in Learning More?</h2>
+            <p class="contact-intro">
+                We're building something special and would love to hear from you
+            </p>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <a href="mailto:hello@lonesomenomore.com">hello@lonesomenomore.com</a>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <a href="tel:+15555551234">(555) 555-1234</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lonesome No More. All rights reserved.</p>
+            <p class="powered-by">Powered by AI • Built with care</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for any future anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll (optional enhancement)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for fade-in effect
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
