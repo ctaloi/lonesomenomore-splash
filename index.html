@@ -202,36 +202,72 @@
 
         /* Demo Section */
         .demo {
-            background: linear-gradient(135deg, rgba(95, 122, 97, 0.05) 0%, rgba(232, 170, 107, 0.05) 100%);
-            border-top: 1px solid rgba(95, 122, 97, 0.12);
-            border-bottom: 1px solid rgba(95, 122, 97, 0.12);
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(95, 122, 97, 0.03) 0%, rgba(232, 170, 107, 0.03) 100%);
+            pointer-events: none;
+        }
+
+        .demo .container {
+            position: relative;
+            z-index: 1;
         }
 
         .demo-content {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            padding: 40px 30px;
+            background: var(--bg-cream);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px var(--shadow-soft);
+            border: 1px solid rgba(95, 122, 97, 0.08);
         }
 
         .demo-icon {
-            font-size: 4rem;
+            font-size: 4.5rem;
             color: var(--secondary-color);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .demo-title {
             font-family: 'Merriweather', serif;
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-weight: 700;
+            line-height: 1.3;
         }
 
         .demo-description {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-medium);
             line-height: 1.75;
-            margin-bottom: 30px;
+            margin-bottom: 0;
+        }
+
+        .demo-description a {
+            transition: color 0.2s ease;
+        }
+
+        .demo-description a:hover {
+            color: var(--secondary-color);
         }
 
         .coming-soon-badge {
@@ -799,10 +835,13 @@
                     <i class="fas fa-headphones"></i>
                 </div>
                 <h2 class="demo-title">Try a Demo Conversation</h2>
-                <p class="demo-description">
-                    Experience firsthand how natural and engaging our AI companion can be. Use the widget below or call <a href="tel:+13158886838" style="color: var(--primary-color); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--secondary-color);">(315) 888-6838</a> to chat with Sophie!
+                <p class="demo-description" style="margin-bottom: 16px;">
+                    Experience firsthand how natural and engaging our AI companion can be.
                 </p>
-                <div style="margin-top: 50px; display: flex; justify-content: center;">
+                <p class="demo-description" style="margin-bottom: 50px;">
+                    Use the widget below or call <a href="tel:+13158886838" style="color: var(--primary-color); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--secondary-color); padding-bottom: 2px;">(315) 888-6838</a> to chat with Sophie!
+                </p>
+                <div style="display: flex; justify-content: center;">
                     <elevenlabs-convai agent-id="agent_4301ka6k5hnvf969wqdbpjf6paq3"></elevenlabs-convai>
                 </div>
             </div>
