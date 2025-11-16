@@ -227,11 +227,13 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            padding: 40px 30px;
+            padding: 40px 30px 50px;
             background: var(--bg-cream);
             border-radius: 24px;
             box-shadow: 0 8px 32px var(--shadow-soft);
             border: 1px solid rgba(95, 122, 97, 0.08);
+            position: relative;
+            z-index: 1;
         }
 
         .demo-icon {
@@ -838,10 +840,10 @@
                 <p class="demo-description" style="margin-bottom: 16px;">
                     Experience firsthand how natural and engaging our AI companion can be.
                 </p>
-                <p class="demo-description" style="margin-bottom: 50px;">
+                <p class="demo-description" style="margin-bottom: 60px;">
                     Use the widget below or call <a href="tel:+13158886838" style="color: var(--primary-color); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--secondary-color); padding-bottom: 2px;">(315) 888-6838</a> to chat with Sophie!
                 </p>
-                <div style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center; position: relative; z-index: 10;">
                     <elevenlabs-convai agent-id="agent_4301ka6k5hnvf969wqdbpjf6paq3"></elevenlabs-convai>
                 </div>
             </div>
