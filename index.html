@@ -676,49 +676,101 @@
 
         /* Contact Section */
         .contact {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4D6350 100%);
             color: var(--bg-cream);
-            border-radius: 16px;
-            box-shadow: 0 6px 28px rgba(95, 122, 97, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(232, 170, 107, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 115, 94, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1;
         }
 
         .contact .section-title {
             color: var(--bg-cream);
+            font-size: 2.6rem;
         }
 
         .contact-intro {
             text-align: center;
-            font-size: 1.25rem;
-            margin-bottom: 40px;
+            font-size: 1.3rem;
+            margin-bottom: 50px;
             color: var(--bg-cream);
-            opacity: 0.96;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
         .contact-methods {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .contact-methods {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
 
         .contact-method {
             text-align: center;
-            flex: 1;
-            min-width: 260px;
-            max-width: 360px;
+            padding: 35px 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
         }
 
         .contact-method i {
-            font-size: 2.8rem;
-            margin-bottom: 18px;
+            font-size: 3.2rem;
+            margin-bottom: 20px;
             color: var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover i {
+            transform: scale(1.15);
         }
 
         .contact-method h3 {
             font-family: 'Merriweather', serif;
-            font-size: 1.35rem;
-            margin-bottom: 14px;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
             font-weight: 600;
             color: var(--bg-cream);
         }
@@ -726,16 +778,17 @@
         .contact-method a {
             color: var(--bg-cream);
             text-decoration: none;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 4px;
+            padding-bottom: 5px;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-weight: 600;
+            display: inline-block;
         }
 
         .contact-method a:hover {
             border-color: var(--bg-cream);
-            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         /* Footer */
