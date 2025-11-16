@@ -59,44 +59,110 @@
         /* Header / Hero Section */
         .hero {
             text-align: center;
-            padding: 70px 20px 90px;
-            background: var(--bg-light);
+            padding: 80px 20px 100px;
+            background: linear-gradient(135deg,
+                rgba(95, 122, 97, 0.03) 0%,
+                rgba(232, 170, 107, 0.02) 50%,
+                rgba(212, 115, 94, 0.03) 100%);
             border-bottom: 1px solid rgba(95, 122, 97, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 170, 107, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(95, 122, 97, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .logo {
             font-family: 'Merriweather', serif;
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 18px;
+            gap: 20px;
             letter-spacing: -0.02em;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .logo i {
             color: var(--secondary-color);
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(1); }
         }
 
         .tagline {
             font-family: 'Merriweather', serif;
-            font-size: 1.85rem;
+            font-size: 2rem;
             color: var(--text-dark);
             font-weight: 400;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             line-height: 1.4;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .subheading {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-medium);
             max-width: 720px;
             margin: 0 auto;
             font-weight: 400;
-            line-height: 1.7;
+            line-height: 1.75;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
         }
 
         /* Main Content Sections */
