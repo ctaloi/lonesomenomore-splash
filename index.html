@@ -10,8 +10,13 @@
     <meta property="og:title" content="Lonesome No More - AI Companionship Through Conversation">
     <meta property="og:description" content="Personalized AI companionship for your loved ones, peace of mind for you.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lonesomenomore.com/logo.png">
 
     <title>Lonesome No More - AI Companionship Through Conversation</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,6 +213,18 @@
             letter-spacing: -0.03em;
             animation: fadeInDown 0.8s ease-out;
             text-shadow: 0 2px 8px rgba(95, 122, 97, 0.08);
+        }
+
+        .logo-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(95, 122, 97, 0.15));
+            transition: transform var(--transition-base);
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
         }
 
         @keyframes fadeInDown {
@@ -1365,6 +1382,11 @@
                 gap: var(--space-sm);
             }
 
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+
             .tagline {
                 font-size: 1.5rem;
             }
@@ -1473,7 +1495,7 @@
     <header class="hero">
         <div class="container">
             <h1 class="logo">
-                <i class="fas fa-heart"></i>
+                <img src="logo.png" alt="Lonesome No More Logo" class="logo-image">
                 Lonesome No More
             </h1>
             <p class="tagline">Companionship for your loved ones, peace of mind for you</p>
