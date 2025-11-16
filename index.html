@@ -163,8 +163,13 @@
 
         .step-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 24px var(--shadow-medium);
-            border-color: rgba(95, 122, 97, 0.2);
+            box-shadow: 0 12px 32px var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+
+        .step-card:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(95, 122, 97, 0.3);
         }
 
         .step-number {
@@ -178,6 +183,7 @@
             font-weight: 700;
             line-height: 56px;
             margin-bottom: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .step-title {
@@ -325,6 +331,265 @@
             left: 0;
             color: var(--primary-color);
             font-size: 1.3rem;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            background: var(--bg-light);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 980px) {
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+
+        .use-case-card {
+            background: var(--bg-cream);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(95, 122, 97, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px var(--shadow-medium);
+            border-color: var(--secondary-color);
+        }
+
+        .use-case-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .use-case-card:hover .use-case-icon {
+            transform: scale(1.15);
+        }
+
+        .use-case-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .use-case-description {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Sample Report Section */
+        .sample-report {
+            background: linear-gradient(135deg, rgba(95, 122, 97, 0.03) 0%, rgba(232, 170, 107, 0.03) 100%);
+            padding: 80px 20px;
+        }
+
+        .report-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: 0 8px 32px var(--shadow-medium);
+            border: 1px solid rgba(95, 122, 97, 0.1);
+        }
+
+        .report-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(95, 122, 97, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .report-avatar {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .report-info {
+            flex: 1;
+        }
+
+        .report-name {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .report-date {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        .report-section {
+            margin-bottom: 35px;
+        }
+
+        .report-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .report-section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .report-text {
+            color: var(--text-dark);
+            font-size: 1.08rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .report-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .report-list li {
+            padding: 12px 0;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(95, 122, 97, 0.06);
+        }
+
+        .report-list li:last-child {
+            border-bottom: none;
+        }
+
+        .observation-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .tag-positive {
+            background: rgba(95, 122, 97, 0.12);
+            color: var(--primary-color);
+        }
+
+        .tag-neutral {
+            background: rgba(232, 170, 107, 0.12);
+            color: #C8894D;
+        }
+
+        .report-footer {
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(95, 122, 97, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .report-card {
+                padding: 30px 25px;
+            }
+
+            .report-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .report-avatar {
+                font-size: 3rem;
+            }
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 980px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--bg-cream);
+            padding: 35px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(95, 122, 97, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px var(--shadow-medium);
+        }
+
+        .testimonial-quote {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            font-size: 1.08rem;
+            line-height: 1.75;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .testimonial-author strong {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author span {
+            color: var(--text-medium);
+            font-size: 0.95rem;
         }
 
         /* Contact Section */
@@ -595,6 +860,151 @@
                     <li>Receive regular summaries that help you stay connected to their daily life and wellbeing</li>
                     <li>Gentle wellness observations woven naturally into conversations</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title">Who Benefits from Lonesome No More?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3 class="use-case-title">Long-Distance Family</h3>
+                    <p class="use-case-description">
+                        Live across the country or globe? Stay connected daily with your parents or grandparents, even when you can't visit in person.
+                    </p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="use-case-title">Nursing Homes & Facilities</h3>
+                    <p class="use-case-description">
+                        Enhance resident care with regular companionship. Provide families with detailed updates on their loved ones' wellbeing and daily engagement.
+                    </p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="use-case-title">Busy Caregivers</h3>
+                    <p class="use-case-description">
+                        Juggling work and caregiving? Give your loved one a reliable companion while you receive insights about their mood and health.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Report Section -->
+    <section class="sample-report">
+        <div class="container">
+            <h2 class="section-title">Weekly Conversation Summary</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; font-size: 1.15rem; color: var(--text-medium);">
+                Every week, receive a thoughtful summary of your loved one's conversations, helping you stay connected to their daily life.
+            </p>
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="report-info">
+                        <h3 class="report-name">Margaret's Weekly Summary</h3>
+                        <p class="report-date">January 8-14, 2025 • 6 conversations</p>
+                    </div>
+                </div>
+
+                <div class="report-section">
+                    <h4 class="report-section-title">
+                        <i class="fas fa-heart" style="color: var(--secondary-color); margin-right: 10px;"></i>
+                        Overall Mood & Wellbeing
+                    </h4>
+                    <p class="report-text">
+                        Margaret was in great spirits this week! She was particularly excited about her upcoming garden club meeting and mentioned feeling proud of her tomato plants. Energy levels were consistent, and she expressed gratitude for her daily calls.
+                    </p>
+                </div>
+
+                <div class="report-section">
+                    <h4 class="report-section-title">
+                        <i class="fas fa-comments" style="color: var(--accent-color); margin-right: 10px;"></i>
+                        Conversation Highlights
+                    </h4>
+                    <ul class="report-list">
+                        <li><strong>Family:</strong> Talked fondly about her grandson's basketball game and shared memories of teaching him to garden</li>
+                        <li><strong>Hobbies:</strong> Excited about starting a new mystery novel by her favorite author, Agatha Christie</li>
+                        <li><strong>Health:</strong> Mentioned her knee felt better after physical therapy, walked to the mailbox daily</li>
+                        <li><strong>Social:</strong> Looking forward to bridge club on Thursday and lunch with her friend Betty</li>
+                    </ul>
+                </div>
+
+                <div class="report-section">
+                    <h4 class="report-section-title">
+                        <i class="fas fa-clipboard-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+                        Gentle Observations
+                    </h4>
+                    <div class="observation-tags">
+                        <span class="tag tag-positive">Sleeping well</span>
+                        <span class="tag tag-positive">Appetite good</span>
+                        <span class="tag tag-positive">Socially engaged</span>
+                        <span class="tag tag-neutral">Mentioned missing daughter's visit</span>
+                    </div>
+                </div>
+
+                <div class="report-footer">
+                    <p style="font-style: italic; color: var(--text-medium); margin: 0;">
+                        <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+                        This is a sample report. Actual reports are personalized based on your loved one's conversations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Families Are Saying</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Since Mom started using Lonesome No More, she's so much happier. She talks about her conversations with Sophie like she's a real friend. And the weekly summaries help me stay connected even though I live 2,000 miles away."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Sarah M.</strong>
+                        <span>Daughter & Long-Distance Caregiver</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "We introduced LNM to our assisted living facility and the residents love it. It's like having a companion available 24/7. Families appreciate the conversation insights, and we've seen improved mood across the board."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>David T.</strong>
+                        <span>Activities Director, Sunrise Senior Living</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Dad was skeptical at first, but now he looks forward to his daily chats. The AI remembers his stories and asks thoughtful follow-up questions. It's honestly amazing how natural it feels."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Jennifer L.</strong>
+                        <span>Daughter & Primary Caregiver</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
