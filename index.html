@@ -92,6 +92,31 @@
             opacity: 0.4;
         }
 
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 2px 8px rgba(95, 122, 97, 0.3);
+        }
+
+        .scroll-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: inherit;
+            filter: blur(4px);
+            opacity: 0.5;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -1212,6 +1237,106 @@
             filter: drop-shadow(0 2px 8px rgba(232, 170, 107, 0.4));
         }
 
+        /* FAQ Section */
+        .faq {
+            background: var(--bg-light);
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-cream);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(95, 122, 97, 0.08);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: var(--space-lg) var(--space-xl);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all var(--transition-base);
+            position: relative;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-question::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: var(--space-xl);
+            right: var(--space-xl);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(95, 122, 97, 0.1), transparent);
+        }
+
+        .faq-icon {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            transition: all var(--transition-base);
+            flex-shrink: 0;
+            margin-left: var(--space-md);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow), padding var(--transition-slow);
+            padding: 0 var(--space-xl);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 var(--space-xl) var(--space-lg);
+        }
+
+        .faq-answer p {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .faq-answer ul {
+            margin: var(--space-sm) 0 0 var(--space-md);
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .faq-answer li {
+            margin-bottom: var(--space-xs);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -1341,6 +1466,9 @@
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
@@ -1657,6 +1785,94 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How does Lonesome No More work?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>It's simple! After you share your loved one's interests, background, and preferences, we assign them a dedicated phone number. They can call anytime for a friendly chat, or we can call them on a schedule that works best. Our AI companion remembers everything from previous conversations, asks thoughtful questions, and creates genuinely engaging discussions. You receive weekly summaries of their conversations and gentle wellness insights.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is my loved one's information secure and private?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We take privacy and security very seriously. All conversations are encrypted, and personal information is stored securely in compliance with industry standards. We never share or sell your loved one's data. Conversation summaries are only accessible to family members you designate.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can they really call anytime, 24/7?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Each loved one receives their own dedicated phone number that's available 24 hours a day, 7 days a week. Whether it's 2 AM and they can't sleep, or they just want to chat during the day, their AI companion is always ready for a conversation. There's no waiting, no appointments needed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What if my loved one isn't comfortable with technology?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That's the beauty of Lonesome No More - it's just a phone call! No apps to download, no computers to learn, no buttons to press beyond making a simple phone call. If they can use a telephone, they can use our service. The conversation feels completely natural and human.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How natural do the conversations sound?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our AI uses state-of-the-art voice technology from ElevenLabs, making conversations sound remarkably natural and warm. The AI companion remembers details from previous calls, asks follow-up questions, and responds appropriately to emotion and context. Try our demo above to experience it yourself - most people are amazed by how genuine it feels!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I customize the voice and conversation topics?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! During onboarding, you can choose from several warm, friendly voices and provide information about your loved one's interests, hobbies, family history, and preferred conversation topics. The AI uses this to create personalized, meaningful conversations that reflect their unique life and preferences.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What kind of insights will I receive?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You'll receive weekly conversation summaries that include conversation highlights, mood observations, topics discussed, and gentle wellness notes (like mentions of sleep quality, social activities, or health comments). These summaries help you stay connected to their daily life and spot any concerns early, while respecting their privacy.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How much does it cost?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're currently in beta and finalizing our pricing plans. We're committed to making this service affordable and accessible for families. Interested in learning more? Contact us at <a href="mailto:admin@vaspian.com" style="color: var(--primary-color); text-decoration: underline;">hello@lonesomenomore.com</a> or call <a href="tel:+18338174646" style="color: var(--primary-color); text-decoration: underline;">(833) 817-4646</a> to discuss options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact">
         <div class="container">
@@ -1763,6 +1979,34 @@
                 cardObserver.observe(card);
             });
         }, 100);
+
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle current FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
     </script>
 
     <!-- ElevenLabs ConvAI Widget -->
