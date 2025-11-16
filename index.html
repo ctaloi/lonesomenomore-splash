@@ -266,6 +266,81 @@
             line-height: 1.7;
         }
 
+        /* Always Available Section */
+        .always-available {
+            background: var(--bg-light);
+            padding: 80px 20px;
+        }
+
+        .availability-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .availability-intro {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--text-medium);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.75;
+        }
+
+        .availability-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        @media (max-width: 980px) {
+            .availability-options {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        .availability-option {
+            background: var(--bg-cream);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(95, 122, 97, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            text-align: center;
+        }
+
+        .availability-option:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+
+        .option-icon {
+            font-size: 3.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .availability-option:hover .option-icon {
+            transform: scale(1.15);
+        }
+
+        .option-content h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .option-content p {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
         /* Demo Section */
         .demo {
             background: linear-gradient(135deg, rgba(95, 122, 97, 0.04) 0%, rgba(232, 170, 107, 0.04) 100%);
@@ -921,6 +996,47 @@
                     <p class="step-description">
                         Receive regular conversation summaries, topics discussed, and gentle wellness insights to stay connected to their daily life.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Always Available Section -->
+    <section class="always-available">
+        <div class="container">
+            <h2 class="section-title">Always There When They Need It</h2>
+            <div class="availability-content">
+                <p class="availability-intro">
+                    Every loved one gets their own dedicated phone number—a direct line to their AI companion, available 24/7.
+                </p>
+                <div class="availability-options">
+                    <div class="availability-option">
+                        <div class="option-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>They Call Anytime</h3>
+                            <p>Feeling lonely at 2 AM? Just pick up the phone. Their personal number connects them instantly to a warm, familiar voice ready to chat.</p>
+                        </div>
+                    </div>
+                    <div class="availability-option">
+                        <div class="option-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>We Call Them</h3>
+                            <p>Set a schedule that works for them—daily check-ins, weekly chats, or anything in between. LNM calls at their preferred time, just like a thoughtful friend.</p>
+                        </div>
+                    </div>
+                    <div class="availability-option">
+                        <div class="option-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>Completely Flexible</h3>
+                            <p>Your loved one is in control. They can call whenever they want and still receive scheduled check-ins. It's companionship on their terms.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
