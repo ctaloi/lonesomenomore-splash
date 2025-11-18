@@ -677,7 +677,7 @@
 
                         <div class="time-estimate">
                             <i class="fas fa-clock"></i>
-                            <strong>Time to Complete:</strong> 15-20 minutes
+                            <strong>Time to Complete:</strong> 12-15 minutes
                         </div>
 
                         <div class="welcome-features">
@@ -833,46 +833,28 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="childhood">Childhood & Early Years (Ages 0-12)</label>
-                        <textarea id="childhood" name="childhood" class="tall"></textarea>
-                        <p class="field-description">Where did they grow up? Favorite childhood memories? Siblings?</p>
+                        <label for="early_life">Early Life (Childhood through Age 20)</label>
+                        <textarea id="early_life" name="early_life" class="tall"></textarea>
+                        <p class="field-description">Where did they grow up? Childhood memories? High school experiences? Siblings? First job?</p>
                     </div>
 
                     <div class="example-box">
                         <div class="example-label">Example Good Answer:</div>
                         <div class="example-text">
-                            "Dad grew up on a dairy farm outside Sioux City, Iowa in the 1940s and 50s. He was the oldest of 5 kids and helped with milking cows every morning before school. His favorite memory is fishing in the creek behind their house with his little brother Tommy."
+                            "Dad grew up on a dairy farm outside Sioux City, Iowa in the 1940s and 50s. He was the oldest of 5 kids and helped with milking cows every morning before school. His favorite memory is fishing in the creek behind their house with his little brother Tommy. In high school he played football and worked at the local hardware store."
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="teen_years">Teen Years (Ages 13-19)</label>
-                        <textarea id="teen_years" name="teen_years"></textarea>
-                        <p class="field-description">High school experiences? Activities? First job?</p>
+                        <label for="adult_years">Adult Years (Ages 20-60)</label>
+                        <textarea id="adult_years" name="adult_years" class="tall"></textarea>
+                        <p class="field-description">College/military? How they met spouse? Career? Becoming a parent? Raising family? Major accomplishments?</p>
                     </div>
 
                     <div class="form-group">
-                        <label for="young_adult">Young Adult Years (Ages 20-35)</label>
-                        <textarea id="young_adult" name="young_adult"></textarea>
-                        <p class="field-description">College/military? How they met spouse? Early career? Becoming a parent?</p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="middle_years">Middle Years (Ages 36-60)</label>
-                        <textarea id="middle_years" name="middle_years"></textarea>
-                        <p class="field-description">Career peak? Raising family? Major accomplishments?</p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="retirement_years">Retirement & Later Years (Ages 60+)</label>
-                        <textarea id="retirement_years" name="retirement_years"></textarea>
-                        <p class="field-description">Retirement? New hobbies? Travel? Grandchildren?</p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="present_day">Present Day</label>
-                        <textarea id="present_day" name="present_day"></textarea>
-                        <p class="field-description">What does a typical day look like now? What are they looking forward to?</p>
+                        <label for="later_life">Later Life & Today (Age 60+)</label>
+                        <textarea id="later_life" name="later_life" class="tall"></textarea>
+                        <p class="field-description">Retirement? New hobbies? Travel? Grandchildren? What does a typical day look like now? What brings them joy today?</p>
                     </div>
 
                     <div class="nav-buttons">
@@ -913,13 +895,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="extended_family_friends">Extended Family & Friends</label>
+                        <label for="extended_family_friends">Extended Family & Friends <span class="label-optional">(Optional)</span></label>
                         <textarea id="extended_family_friends" name="extended_family_friends"></textarea>
                         <p class="field-description">Other important people, friends, church community? Anyone they talk about frequently?</p>
                     </div>
 
                     <div class="form-group">
-                        <label for="beloved_pets">Beloved Pets (Current or Past)</label>
+                        <label for="beloved_pets">Beloved Pets (Current or Past) <span class="label-optional">(Optional)</span></label>
                         <textarea id="beloved_pets" name="beloved_pets"></textarea>
                         <p class="field-description">Pet names, type of animal, stories about them</p>
                     </div>
@@ -1015,12 +997,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="career_details">Their Career/Profession</label>
-                        <textarea id="career_details" name="career_details"></textarea>
-                        <p class="field-description">What did they do? How long? What were they known for? Proudest professional moment?</p>
-                    </div>
-
                     <div class="nav-buttons">
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
@@ -1096,12 +1072,12 @@
                 <div class="section-card">
                     <div class="section-header">
                         <span class="section-number">6</span>
-                        <h2 class="section-title">Values, Wisdom & Life Philosophy</h2>
-                        <p class="section-description">Understanding what matters most helps conversations feel authentic and respectful.</p>
+                        <h2 class="section-title">Values, Wisdom & Life Philosophy <span class="label-optional" style="font-size: 0.8em; font-weight: 400;">(Optional Section)</span></h2>
+                        <p class="section-description">Understanding what matters most helps conversations feel authentic and respectful. Feel free to skip if you'd like.</p>
                     </div>
 
                     <div class="form-group">
-                        <label for="core_values">Core Values & Beliefs</label>
+                        <label for="core_values">Core Values & Beliefs <span class="label-optional">(Optional)</span></label>
                         <textarea id="core_values" name="core_values"></textarea>
                         <p class="field-description">
                             What principles guided their life? What are they most proud of? What do they want their legacy to be? Advice they often give?
@@ -1109,7 +1085,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="faith_spirituality">Faith & Spirituality</label>
+                        <label for="faith_spirituality">Faith & Spirituality <span class="label-optional">(Optional)</span></label>
                         <textarea id="faith_spirituality" name="faith_spirituality"></textarea>
                         <p class="field-description">
                             Religious tradition? How important is faith? Church involvement? Spiritual practices? Favorite hymns/prayers?
@@ -1117,7 +1093,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="personality">Personality Snapshot</label>
+                        <label for="personality">Personality Snapshot <span class="label-optional">(Optional)</span></label>
                         <textarea id="personality" name="personality"></textarea>
                         <p class="field-description">
                             Three words that describe them? What makes them laugh? What frustrates them? How do they handle stress? Optimistic or pessimistic?
@@ -1281,14 +1257,6 @@
                         </p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="current_interests">Current Interests & What Brings Joy</label>
-                        <textarea id="current_interests" name="current_interests"></textarea>
-                        <p class="field-description">
-                            What are they doing now that brings joy? Any new hobbies? What are they looking forward to?
-                        </p>
-                    </div>
-
                     <div class="nav-buttons">
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
@@ -1360,7 +1328,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="cognitive_support">Cognitive Support Notes (if applicable)</label>
+                        <label for="cognitive_support">Cognitive Support Notes <span class="label-optional">(Optional)</span></label>
                         <textarea id="cognitive_support" name="cognitive_support"></textarea>
                         <p class="field-description">
                             Do they repeat questions/stories? Get confused about time/place? How should AI respond?
@@ -1388,27 +1356,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="when_down">When They're Feeling Down or Lonely</label>
-                        <textarea id="when_down" name="when_down"></textarea>
+                        <label for="emotional_support">Emotional Support & Comforting Strategies</label>
+                        <textarea id="emotional_support" name="emotional_support" class="tall"></textarea>
                         <p class="field-description">
-                            Signs they're feeling down? What usually helps lift their spirits? Comforting topics or memories?
+                            How can we best support them emotionally? What helps when they're feeling down, anxious, or frustrated? Comforting topics or memories? Common worries? What reassures them?
                         </p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="when_anxious">When They're Anxious or Worried</label>
-                        <textarea id="when_anxious" name="when_anxious"></textarea>
-                        <p class="field-description">
-                            Common worries? What reassures them? Grounding topics?
-                        </p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="when_frustrated">When They're Frustrated or Angry</label>
-                        <textarea id="when_frustrated" name="when_frustrated"></textarea>
-                        <p class="field-description">
-                            What typically frustrates them? How do they express it? Best response approach?
-                        </p>
+                    <div class="example-box">
+                        <div class="example-label">Example:</div>
+                        <div class="example-text">
+                            "When Mom is down, talking about her grandkids or her garden always lifts her spirits. She worries about being a burden to the family - gentle reassurance that she's loved helps. When frustrated, she needs space to vent and someone to just listen."
+                        </div>
                     </div>
 
                     <div class="form-group">
