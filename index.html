@@ -465,6 +465,264 @@
             line-height: 1.7;
         }
 
+        /* Beta Program Section */
+        .beta-program {
+            background: linear-gradient(135deg,
+                rgba(232, 170, 107, 0.04) 0%,
+                rgba(95, 122, 97, 0.04) 100%);
+            padding: var(--space-3xl) var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .beta-program::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 170, 107, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        .beta-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .beta-intro {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .beta-description {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            line-height: 1.75;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .beta-card {
+            background: var(--bg-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(95, 122, 97, 0.1);
+            margin-bottom: var(--space-xl);
+        }
+
+        .beta-icon {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: var(--space-lg);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .beta-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            font-weight: 700;
+        }
+
+        .beta-steps {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .beta-step {
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+            padding: var(--space-lg);
+            background: rgba(95, 122, 97, 0.02);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary-color);
+            transition: all var(--transition-base);
+        }
+
+        .beta-step:hover {
+            background: rgba(95, 122, 97, 0.04);
+            transform: translateX(8px);
+        }
+
+        .beta-step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-color), #4D6350);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .beta-step-content h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+        }
+
+        .beta-step-content p {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .beta-notice {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-lg);
+            background: rgba(232, 170, 107, 0.08);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(232, 170, 107, 0.2);
+            margin-bottom: var(--space-xl);
+        }
+
+        .beta-notice-icon {
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .beta-notice-content h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+        }
+
+        .beta-notice-content p {
+            color: var(--text-medium);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .beta-cta {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(95, 122, 97, 0.1);
+        }
+
+        .btn-beta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--secondary-color), #C8654F);
+            color: white;
+            padding: 18px 40px;
+            border-radius: var(--radius-md);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(212, 115, 94, 0.3);
+            transition: all var(--transition-base);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-beta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(212, 115, 94, 0.4);
+            background: linear-gradient(135deg, #C8654F, var(--secondary-color));
+        }
+
+        .btn-beta i {
+            font-size: 1.3rem;
+        }
+
+        .beta-note {
+            margin-top: var(--space-md);
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .beta-note i {
+            color: var(--accent-color);
+        }
+
+        .beta-benefits {
+            margin-top: var(--space-xl);
+        }
+
+        .beta-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 980px) {
+            .beta-benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .beta-benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .beta-benefit {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(95, 122, 97, 0.08);
+            transition: all var(--transition-base);
+        }
+
+        .beta-benefit:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .beta-benefit i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .beta-benefit h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+        }
+
+        .beta-benefit p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
         /* Always Available Section */
         .always-available {
             background: linear-gradient(135deg,
@@ -1545,6 +1803,97 @@
         </div>
     </section>
 
+    <!-- Beta Program Section -->
+    <section class="beta-program">
+        <div class="container">
+            <h2 class="section-title">Join Our Beta Program</h2>
+            <div class="beta-content">
+                <div class="beta-intro">
+                    <p class="beta-description">
+                        We're looking for families to help us perfect Lonesome No More. As a beta participant, you'll get early access to our AI companion service and help shape the future of elderly care technology.
+                    </p>
+                </div>
+
+                <div class="beta-card">
+                    <div class="beta-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="beta-title">How the Beta Works</h3>
+                    <div class="beta-steps">
+                        <div class="beta-step">
+                            <div class="beta-step-number">1</div>
+                            <div class="beta-step-content">
+                                <h4>Complete the Intake Form</h4>
+                                <p>Fill out our comprehensive questionnaire about your loved one's background, interests, and preferences. This helps us create truly personalized conversations.</p>
+                            </div>
+                        </div>
+                        <div class="beta-step">
+                            <div class="beta-step-number">2</div>
+                            <div class="beta-step-content">
+                                <h4>We'll Review & Contact You</h4>
+                                <p>Our team will review your submission and reach out within 2-3 business days to discuss next steps, answer questions, and schedule onboarding.</p>
+                            </div>
+                        </div>
+                        <div class="beta-step">
+                            <div class="beta-step-number">3</div>
+                            <div class="beta-step-content">
+                                <h4>Start Free Beta Service</h4>
+                                <p>As a beta participant, you'll receive free access to our service in exchange for your feedback and insights to help us improve.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="beta-notice">
+                        <div class="beta-notice-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="beta-notice-content">
+                            <h4>Beta Program Note</h4>
+                            <p>During the beta phase, some features like automated summaries and scheduling may not be available. We'll work with you directly to set up calls and gather feedback. Full details on beta functionality will be provided when we contact you.</p>
+                        </div>
+                    </div>
+
+                    <div class="beta-cta">
+                        <a href="beta-intake.html" class="btn-beta">
+                            <i class="fas fa-clipboard-list"></i>
+                            Complete Beta Intake Form
+                        </a>
+                        <p class="beta-note">
+                            <i class="fas fa-clock"></i>
+                            Takes 15-20 minutes • Save progress as you go
+                        </p>
+                    </div>
+                </div>
+
+                <div class="beta-benefits">
+                    <h3 style="text-align: center; font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 30px; color: var(--text-dark);">Beta Participant Benefits</h3>
+                    <div class="beta-benefits-grid">
+                        <div class="beta-benefit">
+                            <i class="fas fa-gift"></i>
+                            <h4>Free Access</h4>
+                            <p>Full service at no cost during beta period</p>
+                        </div>
+                        <div class="beta-benefit">
+                            <i class="fas fa-users"></i>
+                            <h4>Direct Support</h4>
+                            <p>Priority access to our team for questions and feedback</p>
+                        </div>
+                        <div class="beta-benefit">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Shape the Future</h4>
+                            <p>Your input directly influences product development</p>
+                        </div>
+                        <div class="beta-benefit">
+                            <i class="fas fa-tag"></i>
+                            <h4>Early Bird Pricing</h4>
+                            <p>Special discounted rates when we launch publicly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Always Available Section -->
     <section class="always-available">
         <div class="container">
@@ -1921,7 +2270,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Lonesome No More. All rights reserved.</p>
-            <p class="powered-by">Powered by AI • Built with care in Buffalo, NY</p>
+            <p class="powered-by">Powered by AI • Built with love in Buffalo, NY</p>
         </div>
     </footer>
 
