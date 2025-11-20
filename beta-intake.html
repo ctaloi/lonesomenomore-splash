@@ -1647,7 +1647,15 @@
         // Update progress bar
         function updateProgress() {
             const progress = (currentSection / totalSections) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+
+            // Safety check - only update if elements exist
+            if (!progressFill || !progressText) {
+                return;
+            }
+
+            progressFill.style.width = progress + '%';
 
             const sectionTitles = [
                 'Getting Started',
@@ -1666,7 +1674,7 @@
                 'Complete!'
             ];
 
-            document.getElementById('progressText').textContent =
+            progressText.textContent =
                 currentSection === 0 ? sectionTitles[0] :
                 `Section ${currentSection} of ${totalSections - 2}: ${sectionTitles[currentSection]}`;
         }
