@@ -1770,6 +1770,13 @@
                 processedFields.add(key);
             }
 
+            // Map your_email to email for Formspree (required field)
+            const yourEmail = consolidatedData.get('your_email');
+            if (yourEmail) {
+                consolidatedData.append('email', yourEmail);
+                consolidatedData.append('_replyto', yourEmail);
+            }
+
             // Add form endpoint
             const formspreeEndpoint = 'https://formspree.io/f/xanvwyey';
 
@@ -1794,7 +1801,22 @@
                 } else {
                     const errorData = await response.json().catch(() => ({}));
                     console.error('Formspree error:', errorData);
-                    alert('There was a problem submitting your form. Please try again or contact us at hello@lonesomenomore.com');
+
+                    // Build user-friendly error message
+                    let errorMessage = 'There was a problem submitting your form:\n\n';
+
+                    if (errorData.errors && Array.isArray(errorData.errors)) {
+                        errorData.errors.forEach(err => {
+                            if (err.field && err.message) {
+                                errorMessage += `• ${err.field}: ${err.message}\n`;
+                            }
+                        });
+                        errorMessage += '\nPlease fix these issues and try again.';
+                    } else {
+                        errorMessage = 'There was a problem submitting your form. Please try again or contact us at lnm@vaspian.com';
+                    }
+
+                    alert(errorMessage);
                 }
             } catch (error) {
                 document.getElementById('loadingOverlay').classList.remove('active');
