@@ -320,8 +320,23 @@
         .nav-buttons {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             gap: 16px;
             margin-top: 40px;
+        }
+
+        .skip-link {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .skip-link:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
 
         .btn {
@@ -816,6 +831,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -861,6 +877,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -910,6 +927,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1001,6 +1019,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1060,6 +1079,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1104,6 +1124,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1192,6 +1213,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1261,6 +1283,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1339,6 +1362,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1382,6 +1406,7 @@
                         <button type="button" class="btn btn-secondary" onclick="prevSection()">
                             <i class="fas fa-arrow-left"></i> Back
                         </button>
+                        <a href="javascript:void(0)" class="skip-link" onclick="showSection(12)">Skip to Review</a>
                         <button type="button" class="btn btn-primary" onclick="nextSection()">
                             Continue <i class="fas fa-arrow-right"></i>
                         </button>
@@ -1777,6 +1802,14 @@
                 consolidatedData.append('_replyto', yourEmail);
             }
 
+            // Debug: Log what we're sending
+            console.log('Submitting form with email:', yourEmail);
+            const formDataObj = {};
+            for (let [key, value] of consolidatedData.entries()) {
+                formDataObj[key] = value;
+            }
+            console.log('Form data being sent:', formDataObj);
+
             // Add form endpoint
             const formspreeEndpoint = 'https://formspree.io/f/xanvwyey';
 
@@ -1792,7 +1825,10 @@
                 // Hide loading
                 document.getElementById('loadingOverlay').classList.remove('active');
 
+                console.log('Formspree response status:', response.status);
+
                 if (response.ok) {
+                    console.log('Form submitted successfully!');
                     // Clear localStorage
                     localStorage.removeItem('lnm_beta_intake');
 
