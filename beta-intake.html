@@ -1736,8 +1736,31 @@
             // Show loading
             document.getElementById('loadingOverlay').classList.add('active');
 
-            // Prepare form data
-            const formData = new FormData(this);
+            // Prepare form data - consolidate checkbox/radio arrays
+            const rawFormData = new FormData(this);
+            const consolidatedData = new FormData();
+
+            // Track which fields have been processed
+            const processedFields = new Set();
+
+            for (let [key, value] of rawFormData.entries()) {
+                if (processedFields.has(key)) {
+                    continue;
+                }
+
+                // Get all values for this key
+                const allValues = rawFormData.getAll(key);
+
+                if (allValues.length > 1) {
+                    // Multiple values - join them with commas
+                    consolidatedData.append(key, allValues.join(', '));
+                } else {
+                    // Single value - just append it
+                    consolidatedData.append(key, value);
+                }
+
+                processedFields.add(key);
+            }
 
             // Add form endpoint
             const formspreeEndpoint = 'https://formspree.io/f/xanvwyey';
@@ -1745,7 +1768,7 @@
             try {
                 const response = await fetch(formspreeEndpoint, {
                     method: 'POST',
-                    body: formData,
+                    body: consolidatedData,
                     headers: {
                         'Accept': 'application/json'
                     }
@@ -1761,6 +1784,8 @@
                     // Show thank you section
                     showSection(13);
                 } else {
+                    const errorData = await response.json().catch(() => ({}));
+                    console.error('Formspree error:', errorData);
                     alert('There was a problem submitting your form. Please try again or contact us at hello@lonesomenomore.com');
                 }
             } catch (error) {
