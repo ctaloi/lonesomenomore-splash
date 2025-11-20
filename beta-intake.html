@@ -667,7 +667,7 @@
     </header>
 
     <!-- Progress Bar -->
-    <div class="progress-container">
+    <div class="progress-container" id="progressContainer" style="display: none;">
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill" style="width: 0%"></div>
         </div>
@@ -1719,10 +1719,18 @@
             const progress = (currentSection / totalSections) * 100;
             const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
+            const progressContainer = document.getElementById('progressContainer');
 
             // Safety check - only update if elements exist
-            if (!progressFill || !progressText) {
+            if (!progressFill || !progressText || !progressContainer) {
                 return;
+            }
+
+            // Hide progress bar on welcome page (section 0), show it on all other sections
+            if (currentSection === 0) {
+                progressContainer.style.display = 'none';
+            } else {
+                progressContainer.style.display = 'block';
             }
 
             progressFill.style.width = progress + '%';
